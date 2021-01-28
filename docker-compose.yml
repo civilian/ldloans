@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+
+    rest-service:
+        env_file: flask-jwt-auth/.env
+        container_name: rest-service
+        build:
+          context: flask-jwt-auth
+          dockerfile: Dockerfile
+          args:
+            ENV_FILE: .env
+            BASE_DIR: /flask-jwt-auth
+        # Migrating the database in the command where the server is runned is dangerous but
+        # in this case simplifies execution
+        command: bash -c "python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"
+        volumes:
+          - ./flask-jwt-auth:/flask-jwt-auth
+        ports:
+          - "8000:8000"
+          - "3000:3000"
+    
