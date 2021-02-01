@@ -34,7 +34,7 @@ services:
         - ./reactjs-jwt-authentication:/reactjs-jwt-authentication
         - ./reactjs-jwt-authentication/command.sh:/command.sh
       ports:
-        - "443:443"
+        - "88:88"
       depends_on:
         - rest-service
       
