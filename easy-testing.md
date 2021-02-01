@@ -7,8 +7,12 @@
 * Go to the project https://documenter.getpostman.com/view/7547562/TW6wKUbd and get it to run in postman
 * In the folder aws are all the calls that you can do the developed api.
 
+### Api Rest running the tests
+* If you connect to the server with the command and the key provided in the mail you can also review the tests that you run with:
+  `docker-compose run rest-service python manage.py test`
+
 ## Testing the frontend
-* Go to the url https://ec2-34-233-128-227.compute-1.amazonaws.com
+* Go to the url http://ec2-34-233-128-227.compute-1.amazonaws.com
 * With the credentials
 
 | User          | Password    |

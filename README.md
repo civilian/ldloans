@@ -54,6 +54,7 @@ I implemented the test project as a Django application and using Django Rest Fra
 * Design of the Database.
 * Creation of the Rest Api in Flask with jwt token login.
 * Creation of the Rest Api documentaion in postman to simplify testing.
+* Creation of the tests of the Res Api in Flask to increase quality and understanding.
 * Creation of the Frontend in ReactJS including login with jwt tokens.
 * Creation of an nginx production server for the rest-service in Flask to make it more secure and scalable.
 * An instalation in AWS is created, configuring the ports, the RDS (database), billing alarms, proper users for the database for easy testing.

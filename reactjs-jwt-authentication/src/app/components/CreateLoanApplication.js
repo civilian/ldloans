@@ -57,7 +57,7 @@ class CreateLoanApplication extends Component {
       ).then(
         response => {
           var successful = true
-          if (response.data.data.status == 'fail'){
+          if (response.data.status == 'fail'){
             successful = false
           }
           this.setState({

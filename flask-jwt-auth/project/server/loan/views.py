@@ -62,7 +62,7 @@ class LoanApplicationsApi(MethodView):
                     loan_status = u'denied'
                     status = 'fail'
                     response_status = 208
-                    message = f"The amount requested is bigger than 50000 so your Loan was " \
+                    message = f"The amount requested is bigger than 50000 so your loan was " \
                                 "rejected."
                 elif requested_amount == self.requested_amount_limit:
                     loan_status = u'pending'
@@ -92,7 +92,6 @@ class LoanApplicationsApi(MethodView):
             'data': {
                 'user_id': user.id,
                 'message': message,
-                'status': status,
             }
         }
         return make_response(jsonify(responseObject)), response_status
