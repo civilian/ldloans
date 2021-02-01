@@ -17,8 +17,8 @@ services:
         volumes:
           - ./flask-jwt-auth:/flask-jwt-auth
           - ./flask-jwt-auth/command.sh:/command.sh
-        # ports:
-        #   - "5000:5000"
+        ports:
+          - "5000:5000"
     
     frontend:
       env_file: reactjs-jwt-authentication/.env
