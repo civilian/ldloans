@@ -23,7 +23,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://nginx-rest-service:90",
+  "proxy": "http://rest-service:5000",
   "eslintConfig": {
     "extends": [
       "react-app",
