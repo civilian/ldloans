@@ -78,3 +78,6 @@ Is basically the same as " Debug commands of the manage.py" with the remote visu
 
 ### Windows
 - If the container frontend does not want to build go the file explorer in the directory of the project reactjs-jwt-authentication and delete the file node_modules
+
+### Linux
+- ERROR: for rest-service  Cannot start service rest-service: OCI runtime create failed: container_linux.go:370: starting container process caused: exec: "/command.sh": permission denied: unknown

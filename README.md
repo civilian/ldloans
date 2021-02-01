@@ -8,7 +8,8 @@ If you want me to implement some new feature, fix something or give any further 
 The easiest way to test is to connect to the server provided in the email and follow [easy-testing.md](easy-testing.md)
 
 ## Installation
-Assuming you have the repository cloned already
+1) Assuming you have the repository cloned already
+2) In linux run `sudo chmod -R 755 ldloans/*`
 
 ### Requirements
 This is what you need to install in your computer
