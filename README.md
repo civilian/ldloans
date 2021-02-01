@@ -23,8 +23,8 @@ This is what you need to install in your computer
 
 ### Putting enviroment file .env
 
-* Some configurations are dependant of the .env file. Then rename the file [./flask-jwt-auth/.env.bk](./flask-jwt-auth/.env.bk) and the file [./reactjs-jwt-authentication/.env.bk](./reactjs-jwt-authentication/.env.bk)  to .env keeping them in their own directory and if you want put the data of your bd.
-* You need to create the database you specify in the .env file in ./flask-jwt-auth/ and also the same database ended in _test
+* Some configurations are dependant of the .env file. You need to rename the file [./flask-jwt-auth/.env.bk](./flask-jwt-auth/.env.bk) and the file [./reactjs-jwt-authentication/.env.bk](./reactjs-jwt-authentication/.env.bk)  to .env keeping them in their own respective directory. If you want put the data of your database.
+* You need to create the database you specify in the .env file in ./flask-jwt-auth/. Also the same database ended in _test
 * You also need to run:
   1) `docker-compose run rest-service python manage.py create_db`
   2) `docker-compose run rest-service python manage.py db init`
@@ -37,7 +37,7 @@ This is what you need to install in your computer
 
 1) If you want to test in a visual manner here is the url to the project in postman -> https://documenter.getpostman.com/view/7547562/TW6wKUbd
     - You can also see some examples of the urls.
-2) in general in the [project](https://documenter.getpostman.com/view/7547562/TW6wKUbd) you can see how to run the rest application with curl
+2) In general in the [project](https://documenter.getpostman.com/view/7547562/TW6wKUbd) you can see how to run the rest application with curl
 
 3) You can also review the tests that you run with:
   `docker-compose run rest-service python manage.py test`
@@ -46,11 +46,11 @@ This is what you need to install in your computer
 1) To run the react js frontend go to [http://localhost:8080](http://localhost:8080) now you can test according to what it says in [easy-testing.md](easy-testing.md)
 
 ## Implementation
-I implemented the test project as a Django application and using Django Rest Framework for the API Rest.
+I implemented the test project as a union of a Rest Api in Flask and a frontend in Reactjs.
 
 ### Implemented Features
-* Docker machines with a up to date installation.
-* Docker compose files to make easier the user of Docker and the deployment
+* Docker machines with an up to date installation.
+* Docker compose files to make easier the use of Docker and the deployment.
 * Design of the Database.
 * Creation of the Rest Api in Flask with jwt token login.
 * Creation of the Rest Api documentaion in postman to simplify testing.
@@ -76,7 +76,7 @@ I implemented the test project as a Django application and using Django Rest Fra
 
 1) User Registration Phase: – User uses a React.js register form to post user’s info (email, password, is_admin) to Backend API /auth/register. – Backend will check the existing users in database and save user’s signup info to database. Finally, It will return a message (successfully or fail) to
 
-2) User Login Phase: – User posts user/password to signin to Backend RestAPI /auth/login. – Backend will check the username/password, if it is right, Backend will create and JWT string with secret then return it to Reactjs client.
+2) User Login Phase: – User posts user/password to login to the Backend RestAPI /auth/login. – Backend will check the username/password, if it is right, Backend will create and JWT string with the configured secret. Then return it to Reactjs client.
 
 After login, user can request secured resources from backend server by adding the JWT token in Authorization Header. For each request, backend will check the JWT signature and then returns back the resources based on user’s registered authorities.
 

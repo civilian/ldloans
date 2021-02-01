@@ -5,11 +5,11 @@
 
 ## Testing the Api Rest
 * Go to the project https://documenter.getpostman.com/view/7547562/TW6wKUbd and get it to run in postman
-* In the folder aws are all the calls that you can do the developed api.
+* In the folder aws are all the calls that you can to the developed api.
 
 ### Api Rest running the tests
-* If you connect to the server with the command and the key provided in the mail you can also review the 
-tests first going to the ldloans directory (`cd ~/ldloans`) and  you run the tests with with:
+* If you connect to the server with the command and the key provided in the mail, you can also review the 
+tests. First go to the ldloans directory (`cd ~/ldloans`) and then you can run the tests with with:
   `docker-compose run rest-service python manage.py test`
 
 ## Testing the frontend

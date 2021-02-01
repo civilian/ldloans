@@ -1,5 +1,6 @@
 ## To implement
-- Protect the api with nginx.
+- Protect the frontend with nginx.
+- Tests of the frontend.
 
 ## Comment structure
 - Comments that are obvious after the first read of the code should not be kept in the code augmenting the cognitive load and the time spent reading the code of the developers.
@@ -16,11 +17,12 @@
         - using NODE_PATH, all of them don't work, 
         - the only solution is a custom [command.sh](./reactjs-jwt-authentication/command.sh) that makes sure that the local directory has a simbolic link to an external installation of node_modules.
 
+
 ## Investigating the docker image
 
 - https://pythonspeed.com/articles/base-image-python-docker-images/
 - It's investigated to take advantange of a previous investigation. Where i updated all the versions (from the SO base image to all the versions in requirements.txt).
-- I realize that the python images come from debian but again I choose Ubuntu because the community is bigger and the errors are fixed faster because of that. More importantly i have previously solved various bugs in the ubuntu machine which will help alocating resources(time) in the problem at hand.
+- I realize that the python images come from debian but I choose Ubuntu because the community is bigger and the errors are fixed faster. More importantly i have previously solved various bugs in the ubuntu machine which will help alocating resources(time) in the problem at hand.
 - The building of the image may be slower but this in a real world example will be optimized by creating a base image with everything we need and uploading that to a registry of our own.
 - The version of the base image is 18.04 and not 20.04 to take advantange of the longer release/debugging time passed in the community.
 
@@ -60,6 +62,10 @@
 - By testing and improving the code of flask-jwt-auth i see that unittest package fails in a really porly documented manner, i always have to go to the method to realize what happent that's why i prefer pytest.
 
 - The same aproach to start from a aplication with some code is done for the client side of the application.
+
+### Deployment in aws
+* The deployment of the frontend presents a problem of the host. If the host is not specified correctly the application will just say "Incorrect Host". To solve this problem different solutions are investigated like rewriting webpack configuration. The solution is found in a less agressive way; by changing an enviroment variable in the deploy of the ReactJs application.(Which is completly different from the provided solutions in the internet).
+* The deploy of the nginx inside an AWS machine makes me investigate and learn a lot more about nginx. The template that I always follow had a server block that was just to serve static content althought it worked different in other projects.
 
 ## Debug
 
