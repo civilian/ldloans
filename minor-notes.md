@@ -19,7 +19,7 @@
 ## Investigating the docker image
 
 - https://pythonspeed.com/articles/base-image-python-docker-images/
-- It's investigated to take advantange of a previous investigation that has been done for the previous job. Where i updated all the versions (from the SO base image to all the versions in requirements.txt).
+- It's investigated to take advantange of a previous investigation. Where i updated all the versions (from the SO base image to all the versions in requirements.txt).
 - I realize that the python images come from debian but again I choose Ubuntu because the community is bigger and the errors are fixed faster because of that. More importantly i have previously solved various bugs in the ubuntu machine which will help alocating resources(time) in the problem at hand.
 - The building of the image may be slower but this in a real world example will be optimized by creating a base image with everything we need and uploading that to a registry of our own.
 - The version of the base image is 18.04 and not 20.04 to take advantange of the longer release/debugging time passed in the community.
