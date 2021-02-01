@@ -15,10 +15,10 @@ services:
         # in this case simplifies execution
         command:  /command.sh
         volumes:
-          - ./reactjs-jwt-authentication:/reactjs-jwt-authentication
-          - ./reactjs-jwt-authentication/command.sh:/command.sh
-        ports:
-          - "5000:5000"
+          - ./flask-jwt-auth:/flask-jwt-auth
+          - ./flask-jwt-auth/command.sh:/command.sh
+        # ports:
+        #   - "5000:5000"
     
     frontend:
         env_file: reactjs-jwt-authentication/.env
@@ -34,6 +34,22 @@ services:
           - ./reactjs-jwt-authentication:/reactjs-jwt-authentication
           - ./reactjs-jwt-authentication/command.sh:/command.sh
         ports:
-          - "8080:8080"
+          - "80:80"
         depends_on:
           - rest-service
+      
+
+    nginx-rest-service:
+      image: rest-service-nginx
+      build:
+          context: flask-jwt-auth/nginx
+          dockerfile: Dockerfile
+          args:
+            ENV_FILE: .env
+            BASE_DIR: /flask-jwt-auth
+      container_name: rest-service-nginx
+      restart: always
+      ports:
+        - "90:90"
+      depends_on:
+        - rest-service

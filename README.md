@@ -22,43 +22,57 @@ This is what you need to install in your computer
 
 ### Putting enviroment file .env
 
-Some configurations are dependant of the .env file. Then rename [.env.bk](.env.bk) to .env and if you want put the data of your bd.
-
-### Testing the command
+Some configurations are dependant of the .env file. Then rename the file [./flask-jwt-auth/.env.bk](./flask-jwt-auth/.env.bk)  to .env keeping them in their own directory and if you want put the data of your bd.
 
 ### Testing the api-rest
-1) To run the rest service just do -> `docker-compose up`
+1) To run the rest service just do -> `docker-compose up -d`
 
 #### Testing the api rest
-* The database is added to the repository (db.sqlite3) for fast testing.
 
-2) If you want to test in a more visual manner here is the url to the project in postman -> https://documenter.getpostman.com/view/7547562/TW6tMAnE
+1) If you want to test in a visual manner here is the url to the project in postman -> https://documenter.getpostman.com/view/7547562/TW6wKUbd
     - You can also see some examples of the urls.
+2) in general in the [project](https://documenter.getpostman.com/view/7547562/TW6wKUbd) you can see how to run the rest application with curl
+
+#### Testing the React Js frontend
+1) To run the react js frontend go to [http://localhost:8080](http://localhost:8080) now you can test according to what it says in [easy-testing.md](easy-testing.md)
 
 ## Implementation
 I implemented the test project as a Django application and using Django Rest Framework for the API Rest.
 
 ### Implemented Features
-* Docker machine with a up to date installation.
-* Docker compose to make easier the user of Docker.
-* Design of the Database for eficiency and simple access to data.
-* Used ViewSets (Equivalent to Class Based Views) for the API View.
+* Docker machines with a up to date installation.
+* Docker compose files to make easier the user of Docker and the deployment
+* Design of the Database.
+* Creation of the Rest Api in Flask with jwt token login.
+* Creation of the Rest Api documentaion in postman to simplify testing.
+* Creation of the Frontend in ReactJS including login with jwt tokens.
+* Creation of an nginx production server for the rest-service in Flask to make it more secure and scalable.
 * An instalation in AWS is created, configuring the ports, the RDS (database), billing alarms, proper users for the database for easy testing.
 * Details; documentation, private variables and methods, custom error messages and providing tool to reduce the complexity of testing.
 
 ## Design
 
 ### Entity Relationship diagram
-* There has been 2 versions of the ER Diagram, thanks to the depper understanding of the problem
-* To modify; https://drive.google.com/file/d/1yZk9WSLOnIvv9rz-lJvltbGkvMn_fL-7/view?usp=sharing
+* There are different diagrams seeing that the project has different parts; https://drive.google.com/file/d/1N_iRvU32WGnv9p-gp5caOLHz6Ytgwpvb/view?usp=sharing
 
-#### V1
+#### Architecture Diagram
 
-![ER V1](./diagrams/mopokemonER-v1.png)
+![Architecture Diagram](./diagrams/jdloans-ArchitectureDiagram.png)
 
-#### V2
+#### JWT Flow of information Sequence Diagram
 
-![ER V2](./diagrams/mopokemonER-v2.png)
+![JWT Flow of information](./diagrams/jdloans-JWTFlowOfInformation.png)
+
+
+1) User Registration Phase: – User uses a React.js register form to post user’s info (email, password, is_admin) to Backend API /auth/register. – Backend will check the existing users in database and save user’s signup info to database. Finally, It will return a message (successfully or fail) to
+
+2) User Login Phase: – User posts user/password to signin to Backend RestAPI /auth/login. – Backend will check the username/password, if it is right, Backend will create and JWT string with secret then return it to Reactjs client.
+
+After login, user can request secured resources from backend server by adding the JWT token in Authorization Header. For each request, backend will check the JWT signature and then returns back the resources based on user’s registered authorities.
+
+#### ER Diagram
+
+![ER Diagram](./diagrams/jdloans-ERDiagram.png)
 
 ## Extra notes
 * Different notes of design provided in the file [minor-notes.md](minor-notes.md)
