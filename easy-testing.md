@@ -8,7 +8,7 @@
 * In the folder aws are all the calls that you can do the developed api.
 
 ## Testing the frontend
-* Go to the url url.
+* Go to the url https://ec2-34-233-128-227.compute-1.amazonaws.com.
 * With the credentials
 
 | User          | Password    |

@@ -21,22 +21,22 @@ services:
         #   - "5000:5000"
     
     frontend:
-        env_file: reactjs-jwt-authentication/.env
-        container_name: frontend
-        build:
-          context: reactjs-jwt-authentication
-          dockerfile: Dockerfile
-          args:
-            ENV_FILE: .env
-            BASE_DIR: /reactjs-jwt-authentication
-        command:  /command.sh
-        volumes:
-          - ./reactjs-jwt-authentication:/reactjs-jwt-authentication
-          - ./reactjs-jwt-authentication/command.sh:/command.sh
-        ports:
-          - "80:80"
-        depends_on:
-          - rest-service
+      env_file: reactjs-jwt-authentication/.env
+      container_name: frontend
+      build:
+        context: reactjs-jwt-authentication
+        dockerfile: Dockerfile
+        args:
+          ENV_FILE: .env
+          BASE_DIR: /reactjs-jwt-authentication
+      command:  /command.sh
+      volumes:
+        - ./reactjs-jwt-authentication:/reactjs-jwt-authentication
+        - ./reactjs-jwt-authentication/command.sh:/command.sh
+      ports:
+        - "80:80"
+      depends_on:
+        - rest-service
       
 
     nginx-rest-service:

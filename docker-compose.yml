@@ -13,10 +13,9 @@ services:
             BASE_DIR: /flask-jwt-auth
         # Migrating the database in the command where the server is runned is dangerous but
         # in this case simplifies execution
-        command:  /command.sh
+        command:  flask run -h 0.0.0.0 -p 5000
         volumes:
-          - ./reactjs-jwt-authentication:/reactjs-jwt-authentication
-          - ./reactjs-jwt-authentication/command.sh:/command.sh
+          - ./flask-jwt-auth:/flask-jwt-auth
         ports:
           - "5000:5000"
     

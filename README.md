@@ -22,7 +22,12 @@ This is what you need to install in your computer
 
 ### Putting enviroment file .env
 
-Some configurations are dependant of the .env file. Then rename the file [./flask-jwt-auth/.env.bk](./flask-jwt-auth/.env.bk)  to .env keeping them in their own directory and if you want put the data of your bd.
+* Some configurations are dependant of the .env file. Then rename the file [./flask-jwt-auth/.env.bk](./flask-jwt-auth/.env.bk) and the file [./reactjs-jwt-authentication/.env.bk](./reactjs-jwt-authentication/.env.bk)  to .env keeping them in their own directory and if you want put the data of your bd.
+* You need to create the database you specify in the .env file in ./flask-jwt-auth/ and also the same database ended in _test
+* You also need to run:
+  1) `docker-compose run rest-service python manage.py create_db`
+  2) `docker-compose run rest-service python manage.py db init`
+  3) `docker-compose run rest-service python manage.py db migrate`
 
 ### Testing the api-rest
 1) To run the rest service just do -> `docker-compose up -d`
@@ -32,6 +37,9 @@ Some configurations are dependant of the .env file. Then rename the file [./flas
 1) If you want to test in a visual manner here is the url to the project in postman -> https://documenter.getpostman.com/view/7547562/TW6wKUbd
     - You can also see some examples of the urls.
 2) in general in the [project](https://documenter.getpostman.com/view/7547562/TW6wKUbd) you can see how to run the rest application with curl
+
+3) You can also review the tests that you run with:
+  `docker-compose run rest-service python manage.py test`
 
 #### Testing the React Js frontend
 1) To run the react js frontend go to [http://localhost:8080](http://localhost:8080) now you can test according to what it says in [easy-testing.md](easy-testing.md)
