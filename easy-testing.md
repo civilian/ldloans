@@ -8,7 +8,8 @@
 * In the folder aws are all the calls that you can do the developed api.
 
 ### Api Rest running the tests
-* If you connect to the server with the command and the key provided in the mail you can also review the tests that you run with:
+* If you connect to the server with the command and the key provided in the mail you can also review the 
+tests first going to the ldloans directory (`cd ~/ldloans`) and  you run the tests with with:
   `docker-compose run rest-service python manage.py test`
 
 ## Testing the frontend
